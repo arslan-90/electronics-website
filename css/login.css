@@ -1,0 +1,688 @@
+/* =========================
+       BASIC RESET
+    ========================== */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+
+        background: #05070d;
+
+        color: white;
+
+        min-height: 100vh;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    header {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 80px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 0 5%;
+
+        background:
+            rgba(0, 0, 0, 0.65);
+
+        backdrop-filter: blur(15px);
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.12);
+
+        z-index: 1000;
+    }
+
+    header ul li a.active {
+    color: #00d9ff;
+}
+
+header ul li a.active::after {
+    width: 70%;
+}
+
+
+    /* =========================
+       LOGO
+    ========================== */
+
+    .name img {
+        width: 58px;
+        height: 58px;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+
+        border: 2px solid #00d9ff;
+
+        box-shadow:
+            0 0 10px #00d9ff,
+            0 0 25px
+            rgba(0, 217, 255, 0.4);
+
+        transition: 0.4s ease;
+    }
+
+
+    .name img:hover {
+        transform:
+            rotate(8deg) scale(1.1);
+
+        box-shadow:
+            0 0 15px #00d9ff,
+            0 0 40px #0077ff;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    header ul {
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        list-style: none;
+    }
+
+
+    header ul li a {
+        position: relative;
+
+        display: inline-block;
+
+        padding: 10px 15px;
+
+        color: white;
+
+        text-decoration: none;
+
+        font-size: 15px;
+
+        transition: 0.3s ease;
+    }
+
+
+    header ul li a::after {
+        content: "";
+
+        position: absolute;
+
+        left: 50%;
+
+        bottom: 3px;
+
+        width: 0;
+
+        height: 2px;
+
+        background: #00d9ff;
+
+        transform:
+            translateX(-50%);
+
+        transition: 0.3s ease;
+    }
+
+
+    header ul li a:hover {
+        color: #00d9ff;
+    }
+
+
+    header ul li a:hover::after {
+        width: 70%;
+    }
+
+
+    /* =========================
+       LOGIN AREA
+    ========================== */
+
+    .login-section {
+        min-height: 100vh;
+
+        padding-top: 80px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        position: relative;
+
+        overflow: hidden;
+
+        background:
+
+            radial-gradient(
+                circle at 50% 50%,
+                rgba(0, 217, 255, 0.12),
+                transparent 45%
+            ),
+
+            #05070d;
+    }
+
+
+    /* =========================
+       BACKGROUND GLOW
+    ========================== */
+
+    .login-section::before {
+        content: "";
+
+        position: absolute;
+
+        width: 400px;
+        height: 400px;
+
+        background: #006eff;
+
+        filter: blur(150px);
+
+        opacity: 0.14;
+
+        top: 50%;
+        left: 50%;
+
+        transform:
+            translate(-50%, -50%);
+
+        pointer-events: none;
+    }
+
+
+    /* =========================
+       LOGIN BOX
+    ========================== */
+
+    .login-box {
+        position: relative;
+
+        z-index: 2;
+
+        width: 420px;
+
+        max-width: 90%;
+
+        padding: 40px;
+
+        border-radius: 25px;
+
+        background:
+            rgba(255, 255, 255, 0.05);
+
+        border:
+            1px solid
+            rgba(255, 255, 255, 0.15);
+
+        backdrop-filter: blur(18px);
+
+        box-shadow:
+            0 20px 60px
+            rgba(0, 0, 0, 0.5);
+
+        animation:
+            loginAppear 0.9s ease forwards;
+
+        transition: 0.4s ease;
+    }
+
+
+    .login-box:hover {
+        border-color:
+            rgba(0, 217, 255, 0.5);
+
+        box-shadow:
+            0 20px 70px
+            rgba(0, 217, 255, 0.12);
+    }
+
+
+    /* =========================
+       LOGIN HEADING
+    ========================== */
+
+    .login-box h1 {
+        text-align: center;
+
+        font-size: 38px;
+
+        margin-bottom: 8px;
+
+        text-shadow:
+            0 0 20px
+            rgba(0, 217, 255, 0.2);
+    }
+
+
+    .login-box h1 span {
+        color: #00d9ff;
+    }
+
+
+    .login-box .subtitle {
+        text-align: center;
+
+        color: #888;
+
+        font-size: 14px;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* =========================
+       INPUT GROUP
+    ========================== */
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+
+    .input-group label {
+        display: block;
+
+        margin-bottom: 8px;
+
+        font-size: 14px;
+
+        color: #bbb;
+    }
+
+
+    .input-group input {
+        width: 100%;
+
+        padding: 14px 16px;
+
+        border-radius: 12px;
+
+        border:
+            1px solid
+            rgba(255, 255, 255, 0.15);
+
+        outline: none;
+
+        background:
+            rgba(0, 0, 0, 0.3);
+
+        color: white;
+
+        font-size: 15px;
+
+        transition: 0.3s ease;
+    }
+
+
+    .input-group input:focus {
+        border-color: #00d9ff;
+
+        box-shadow:
+            0 0 15px
+            rgba(0, 217, 255, 0.18);
+    }
+
+
+    .input-group input::placeholder {
+        color: #666;
+    }
+
+
+    /* =========================
+       REMEMBER / FORGOT
+    ========================== */
+
+    .login-options {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        margin-bottom: 25px;
+
+        font-size: 13px;
+    }
+
+
+    .remember {
+        display: flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        color: #999;
+    }
+
+
+    .remember input {
+        accent-color: #00d9ff;
+
+        cursor: pointer;
+    }
+
+
+    .forgot {
+        color: #00d9ff;
+
+        text-decoration: none;
+
+        transition: 0.3s ease;
+    }
+
+
+    .forgot:hover {
+        text-shadow:
+            0 0 10px #00d9ff;
+    }
+
+
+    /* =========================
+       LOGIN BUTTON
+    ========================== */
+
+    .login-button {
+        width: 100%;
+
+        padding: 14px;
+
+        border-radius: 30px;
+
+        border:
+            1px solid #00d9ff;
+
+        background: #00d9ff;
+
+        color: #001018;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s ease;
+    }
+
+
+    .login-button:hover {
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+            0 0 20px #00d9ff,
+            0 0 45px
+            rgba(0, 217, 255, 0.35);
+    }
+
+
+    /* =========================
+       SIGN UP
+    ========================== */
+
+    .signup {
+        text-align: center;
+
+        margin-top: 25px;
+
+        color: #888;
+
+        font-size: 14px;
+    }
+
+
+    .signup a {
+        color: #00d9ff;
+
+        text-decoration: none;
+
+        font-weight: bold;
+
+        transition: 0.3s ease;
+    }
+
+
+    .signup a:hover {
+        text-shadow:
+            0 0 10px #00d9ff;
+    }
+
+
+    /* =========================
+       DIVIDER
+    ========================== */
+
+    .divider {
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        margin: 25px 0;
+
+        color: #666;
+
+        font-size: 12px;
+    }
+
+
+    .divider::before,
+    .divider::after {
+        content: "";
+
+        flex: 1;
+
+        height: 1px;
+
+        background:
+            rgba(255, 255, 255, 0.12);
+    }
+
+
+    /* =========================
+       ANIMATION
+    ========================== */
+
+    @keyframes loginAppear {
+
+        from {
+            opacity: 0;
+
+            transform:
+                translateY(40px)
+                scale(0.96);
+        }
+
+        to {
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+        }
+
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+        padding:
+            30px 20px;
+
+        text-align: center;
+
+        background: #020308;
+
+        border-top:
+            1px solid
+            rgba(255, 255, 255, 0.08);
+    }
+
+
+    footer h2 {
+        color: #00d9ff;
+
+        margin-bottom: 8px;
+    }
+
+
+    footer p {
+        color: #777;
+
+        margin-bottom: 12px;
+    }
+
+
+    footer small {
+        color: #555;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 650px) {
+
+        header {
+            height: 70px;
+
+            padding: 0 20px;
+        }
+
+
+        header ul {
+            gap: 0;
+        }
+
+
+        header ul li a {
+            padding: 8px;
+
+            font-size: 15px;
+        }
+
+
+        .name img {
+            width: 48px;
+            height: 48px;
+        }
+
+
+        .login-section {
+            padding-top: 90px;
+
+            padding-bottom: 50px;
+        }
+
+
+        .login-box {
+            padding: 30px 22px;
+        }
+
+
+        .login-box h1 {
+            font-size: 32px;
+        }
+
+    }
+
+    .menu-btn {
+    display: none;
+    border: 1px solid rgba(0, 217, 255, 0.5);
+    background: rgba(0, 217, 255, 0.08);
+    color: #00d9ff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media (max-width: 650px) {
+
+    header {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .name img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    header nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        display: none;
+        background: rgba(0, 0, 0, 0.92);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+    }
+
+    header nav.show {
+        display: block;
+    }
+
+    header ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    header ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    header ul li a {
+        display: block;
+        width: 100%;
+        padding: 15px;
+    }
+}
