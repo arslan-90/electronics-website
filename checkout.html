@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Checkout | ZA Electronics</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #05070d;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 20px 8%;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        header h1 span {
+            color: #00d9ff;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+        }
+
+        header a:hover {
+            border-color: #00d9ff;
+            color: #00d9ff;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .page-heading {
+            margin-bottom: 30px;
+        }
+
+        .page-heading small {
+            color: #00d9ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-heading h2 {
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .checkout-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 18px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .checkout-card h3 {
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+        .checkout-card h3 span {
+            color: #00d9ff;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 10px;
+            color: #ffffff;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #00d9ff;
+        }
+
+        #orderItems {
+            margin-bottom: 20px;
+        }
+
+        .order-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .order-item-name {
+            font-weight: bold;
+        }
+
+        .order-item-details {
+            margin-top: 5px;
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+
+        .order-item-total {
+            font-weight: bold;
+        }
+
+        .order-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 20px;
+        }
+
+        .order-total strong {
+            color: #00d9ff;
+        }
+
+        #placeOrderButton {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: #00d9ff;
+            color: #05070d;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #placeOrderButton:hover {
+            opacity: 0.85;
+        }
+
+        #emptyMessage {
+            text-align: center;
+            padding: 40px 20px;
+            color: #aaaaaa;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888888;
+        }
+
+        footer span {
+            color: #00d9ff;
+        }
+
+        @media (max-width: 800px) {
+
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+
+            .page-heading h2 {
+                font-size: 30px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            main {
+                width: 92%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>
+        ZA <span>Electronics</span>
+    </h1>
+
+    <a href="products.html">
+        ← Back to Products
+    </a>
+
+</header>
+
+
+<main>
+
+    <section class="page-heading">
+
+        <small>
+            Secure Checkout
+        </small>
+
+        <h2>
+            Complete Your <span style="color:#00d9ff;">Order</span>
+        </h2>
+
+    </section>
+
+
+    <div
+        id="emptyMessage"
+        style="display:none;"
+    >
+
+        <h3>
+            Your cart is empty.
+        </h3>
+
+        <br>
+
+        <a href="products.html">
+            Return to Products
+        </a>
+
+    </div>
+
+
+    <div
+        class="checkout-container"
+        id="checkoutContainer"
+    >
+
+        <!-- CUSTOMER INFORMATION -->
+
+        <section class="checkout-card">
+
+            <h3>
+                Customer <span>Information</span>
+            </h3>
+
+
+           <form id="checkoutForm" action="place-order.php" method="POST">
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        name="customerName"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        name="customerEmail"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        name="customerPhone"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="deliveryAddress">
+                        Delivery Address
+                    </label>
+
+                    <textarea
+                        id="deliveryAddress"
+                        name="deliveryAddress"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="placeOrderButton"
+                >
+                    Place Order
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ORDER SUMMARY -->
+
+        <section class="checkout-card">
+
+            <h3>
+                Order <span>Summary</span>
+            </h3>
+
+
+            <div id="orderItems"></div>
+
+
+            <div class="order-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    Rs <span id="orderTotal">0</span>
+                </strong>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    © 2026
+    <span>ZA Electronics</span>.
+    All rights reserved.
+
+</footer>
+
+
+<script>
+
+    /* =====================================================
+       LOAD CART
+    ===================================================== */
+
+    const cart =
+        JSON.parse(
+            localStorage.getItem("zaCart")
+        ) || [];
+
+
+    const orderItems =
+        document.getElementById(
+            "orderItems"
+        );
+
+
+    const orderTotal =
+        document.getElementById(
+            "orderTotal"
+        );
+
+
+    const checkoutContainer =
+        document.getElementById(
+            "checkoutContainer"
+        );
+
+
+    const emptyMessage =
+        document.getElementById(
+            "emptyMessage"
+        );
+
+
+    /* =====================================================
+       CHECK IF CART IS EMPTY
+    ===================================================== */
+
+    if (cart.length === 0) {
+
+        checkoutContainer.style.display =
+            "none";
+
+        emptyMessage.style.display =
+            "block";
+
+    }
+
+
+    /* =====================================================
+       DISPLAY ORDER
+    ===================================================== */
+
+    let total = 0;
+
+
+    cart.forEach(item => {
+
+        const subtotal =
+            item.price *
+            item.quantity;
+
+
+        total += subtotal;
+
+
+        const orderItem =
+            document.createElement(
+                "div"
+            );
+
+
+        orderItem.className =
+            "order-item";
+
+
+        orderItem.innerHTML = `
+
+            <div>
+
+                <div class="order-item-name">
+                    ${item.name}
+                </div>
+
+                <div class="order-item-details">
+
+                    Rs ${item.price.toLocaleString()}
+                    ×
+                    ${item.quantity}
+
+                </div>
+
+            </div>
+
+
+            <div class="order-item-total">
+
+                Rs ${subtotal.toLocaleString()}
+
+            </div>
+
+        `;
+
+
+        orderItems.appendChild(
+            orderItem
+        );
+
+    });
+
+
+    orderTotal.textContent =
+        total.toLocaleString();
+
+
+    /* =====================================================
+       CHECKOUT FORM
+    ===================================================== */
+
+    const checkoutForm =
+        document.getElementById(
+            "checkoutForm"
+        );
+
+
+checkoutForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
+
+    const customerName =
+        document.getElementById("customerName").value.trim();
+
+    const customerEmail =
+        document.getElementById("customerEmail").value.trim();
+
+    const customerPhone =
+        document.getElementById("customerPhone").value.trim();
+
+    const deliveryAddress =
+        document.getElementById("deliveryAddress").value.trim();
+
+    if (
+        customerName === "" ||
+        customerEmail === "" ||
+        customerPhone === "" ||
+        deliveryAddress === ""
+    ) {
+        alert("Please complete all checkout fields.");
+        return;
+    }
+
+    /*
+        Create a hidden field containing
+        the current shopping cart.
+    */
+
+    const cartInput = document.createElement("input");
+
+    cartInput.type = "hidden";
+    cartInput.name = "cart";
+    cartInput.value = JSON.stringify(cart);
+
+    checkoutForm.appendChild(cartInput);
+
+    checkoutForm.submit();
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ZA Electronics products including cables, appliances and Bluetooth speakers."
+    >
+
+    <meta
+        name="author"
+        content="ZA Electronics"
+    >
+
+    <title>ZA Electronics - Products</title>
+
+
+    <link rel="stylesheet" href="css/products.css">
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header>
+
+        <div class="name">
+
+            <a href="index.html">
+
+                <img
+                    src="canva/logo.png"
+                    alt="ZA Electronics Logo"
+                >
+
+            </a>
+
+        </div>
+
+        <button
+    class="menu-btn"
+    id="menuBtn"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+>
+    ☰
+</button>
+
+
+        <nav aria-label="Main navigation">
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="products.html"
+                        class="active"
+                        aria-current="page"
+                    >
+                        Products
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="details.html">
+                        Details
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="faq.html">
+                        More
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section
+            class="description"
+            id="home"
+        >
+
+            <h2>
+
+                Best Products
+
+                <span style="color:#00d9ff;">
+                    At Your Doorstep.
+                </span>
+
+            </h2>
+
+
+            <h3>
+
+                Keeping your products safe is our first priority.
+
+            </h3>
+
+
+            <p>
+
+                Just choose your product and we will handle the rest.
+
+                Discover quality electronics made for your everyday needs.
+
+            </p>
+
+
+            <div>
+
+                <button
+                    id="cart"
+                    onclick="scrollToCart()"
+                >
+                    View Your Cart
+                    (<span id="cartCount">0</span>)
+                </button>
+
+
+                <button id="darkModeBtn">
+                    ☀ Light Mode
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SEARCH AND FILTER
+        ================================================== -->
+
+        <section
+            class="tools reveal"
+            aria-label="Product search and filtering"
+        >
+
+            <div class="search-box">
+
+                <label
+                    for="searchInput"
+                    style="display:none;"
+                >
+                    Search products
+                </label>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search products..."
+                    aria-label="Search products"
+                >
+
+            </div>
+
+
+            <select
+                id="categoryFilter"
+                aria-label="Filter products by category"
+            >
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="cables">
+                    Cables
+                </option>
+
+                <option value="appliances">
+                    Appliances
+                </option>
+
+                <option value="audio">
+                    Audio
+                </option>
+
+                <option value="deals">
+                    Deals
+                </option>
+
+            </select>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRODUCTS HEADING
+        ================================================== -->
+
+        <section
+            class="products-heading reveal"
+        >
+
+            <small>
+                Our Collection
+            </small>
+
+
+            <h1>
+                Explore Our Products
+            </h1>
+
+
+            <p>
+                Quality electronics, cables and appliances
+                all in one place.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRODUCTS
+        ================================================== -->
+
+        <section
+            class="items"
+            id="products"
+            aria-label="Products"
+        >
+
+
+
+            <!-- PRODUCT 1 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="Local Cable"
+                data-category="cables"
+                data-price="250"
+            >
+
+                <img
+                    src="images/pic1.jpg"
+                    alt="Local electrical cable"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        Local Cable
+                    </h3>
+
+
+                    <p>
+                        Rs 250 per piece
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 2 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="4 in 1 Deal"
+                data-category="deals"
+                data-price="300000"
+            >
+
+                <img
+                    src="images/pic13.jpg"
+                    alt="Four in one electronics deal"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        4 in 1 Deal
+                    </h3>
+
+
+                    <p>
+                        Rs 300,000 PKR
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 3 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="Imported Cables"
+                data-category="cables"
+                data-price="4500"
+            >
+
+                <img
+                    src="images/pic4.jpg"
+                    alt="Imported electronic cables"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        Imported Cables
+                    </h3>
+
+
+                    <p>
+                        Rs 4,500 per piece
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 4 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="Fridge"
+                data-category="appliances"
+                data-price="70000"
+            >
+
+                <img
+                    src="images/pic14.jpg"
+                    alt="Electronic refrigerator"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        Fridge
+                    </h3>
+
+
+                    <p>
+                        Rs 70,000 PKR
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 5 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="Oven"
+                data-category="appliances"
+                data-price="45000"
+            >
+
+                <img
+                    src="images/pic15.jpg"
+                    alt="Electronic oven"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        Oven
+                    </h3>
+
+
+                    <p>
+                        Rs 45,000 PKR
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 6 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="Bluetooth Speakers"
+                data-category="audio"
+                data-price="15000"
+            >
+
+                <img
+                    src="images/pic17.jpg"
+                    alt="Bluetooth speakers"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        Bluetooth Speakers
+                    </h3>
+
+
+                    <p>
+                        Rs 15,000 PKR
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 7 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="Local Cable"
+                data-category="cables"
+                data-price="250"
+            >
+
+                <img
+                    src="images/pic1.jpg"
+                    alt="Local electrical cable"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        Local Cable
+                    </h3>
+
+
+                    <p>
+                        Rs 250 per piece
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 8 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="4 in 1 Deal"
+                data-category="deals"
+                data-price="300000"
+            >
+
+                <img
+                    src="images/pic13.jpg"
+                    alt="Four in one electronics deal"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        4 in 1 Deal
+                    </h3>
+
+
+                    <p>
+                        Rs 300,000 PKR
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 9 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="Imported Cables"
+                data-category="cables"
+                data-price="4500"
+            >
+
+                <img
+                    src="images/pic4.jpg"
+                    alt="Imported electronic cables"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        Imported Cables
+                    </h3>
+
+
+                    <p>
+                        Rs 4,500 per piece
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 10 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="Fridge"
+                data-category="appliances"
+                data-price="70000"
+            >
+
+                <img
+                    src="images/pic14.jpg"
+                    alt="Electronic refrigerator"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        Fridge
+                    </h3>
+
+
+                    <p>
+                        Rs 70,000 PKR
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 11 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="Oven"
+                data-category="appliances"
+                data-price="45000"
+            >
+
+                <img
+                    src="images/pic15.jpg"
+                    alt="Electronic oven"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        Oven
+                    </h3>
+
+
+                    <p>
+                        Rs 45,000 PKR
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PRODUCT 12 -->
+
+            <article
+                class="item reveal product-card"
+                data-name="Bluetooth Speakers"
+                data-category="audio"
+                data-price="15000"
+            >
+
+                <img
+                    src="images/pic17.jpg"
+                    alt="Bluetooth speakers"
+                >
+
+
+                <div class="text">
+
+                    <h3>
+                        Bluetooth Speakers
+                    </h3>
+
+
+                    <p>
+                        Rs 15,000 PKR
+                    </p>
+
+
+                    <button
+                        class="buy-now"
+                        type="button"
+                    >
+                        Buy Now
+                    </button>
+
+
+                    <button
+                        class="add-cart"
+                        type="button"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- NO SEARCH RESULTS -->
+
+        <p id="noResults">
+            No products found. Try another search.
+        </p>
+
+
+
+        <!-- =================================================
+             CART
+        ================================================== -->
+
+        <aside
+            class="cart-section reveal"
+            id="cartSection"
+            aria-label="Shopping cart"
+        >
+
+            <h2>
+                Your Shopping Cart
+            </h2>
+
+
+            <div id="cartItems">
+
+                <p id="emptyCart">
+                    Your cart is empty.
+                </p>
+
+            </div>
+
+
+            <div class="cart-total">
+
+                <p>
+                    Total:
+                    <strong>
+                        Rs <span id="cartTotal">0</span>
+                    </strong>
+                </p>
+
+            </div>
+
+           <button id="checkoutButton" type="button">
+    Proceed to Checkout
+    <span>→</span>
+</button>
+
+        </aside>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <h2>
+            ZA Electronics
+        </h2>
+
+
+        <p>
+            Quality electronics for everyday life.
+        </p>
+
+
+        <small>
+            &copy; 2026 ZA Electronics.
+            All rights reserved.
+        </small>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/products.js">
+
+
+       
+    </script>
+
+</body>
+
+</html>

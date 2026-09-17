@@ -1,0 +1,2036 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your ZA Electronics account.">
+    <title>Create Account | ZA Electronics</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #05070d;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(5, 7, 13, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.15);
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #00d9ff;
+        }
+
+        .logo-area span {
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-area span strong {
+            color: #00d9ff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        nav a {
+            position: relative;
+            padding: 8px 0;
+            color: #d9e7eb;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #00d9ff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #00d9ff;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid rgba(0, 217, 255, 0.35);
+            background: rgba(0, 217, 255, 0.08);
+            color: #00d9ff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           MAIN
+        ========================================================= */
+
+        main {
+            min-height: 100vh;
+            padding: 130px 5% 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .register-container {
+            width: 100%;
+            max-width: 1150px;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 35px;
+            align-items: stretch;
+        }
+
+        /* =========================================================
+           INTRODUCTION CARD
+        ========================================================= */
+
+        .register-intro {
+            position: relative;
+            overflow: hidden;
+            padding: 45px 38px;
+            border: 1px solid rgba(0, 217, 255, 0.22);
+            border-radius: 20px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(0, 217, 255, 0.10),
+                    rgba(255, 255, 255, 0.025)
+                );
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .register-intro::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(0, 217, 255, 0.08);
+            top: -100px;
+            right: -100px;
+            filter: blur(3px);
+        }
+
+        .intro-badge {
+            display: inline-block;
+            padding: 6px 13px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            background: rgba(0, 217, 255, 0.07);
+            color: #00d9ff;
+            font-size: 0.78rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .register-intro h1 {
+            font-size: 2.4rem;
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+        .register-intro h1 span {
+            color: #00d9ff;
+        }
+
+        .register-intro > p {
+            color: #aebdc2;
+            margin-bottom: 30px;
+        }
+
+        .benefits {
+            list-style: none;
+            display: grid;
+            gap: 17px;
+        }
+
+        .benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            color: #dbe8eb;
+        }
+
+        .benefit-icon {
+            flex: 0 0 30px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00d9ff;
+            border: 1px solid rgba(0, 217, 255, 0.35);
+            background: rgba(0, 217, 255, 0.08);
+            font-size: 0.8rem;
+        }
+
+        /* =========================================================
+           FORM CARD
+        ========================================================= */
+
+        .register-card {
+            padding: 38px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: rgba(255, 255, 255, 0.035);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .register-card-header {
+            margin-bottom: 28px;
+        }
+
+        .register-card-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+        }
+
+        .register-card-header p {
+            color: #93a5aa;
+            font-size: 0.92rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #dce8eb;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .required {
+            color: #00d9ff;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            padding: 0 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            background: rgba(0, 0, 0, 0.28);
+            color: #ffffff;
+            outline: none;
+            transition:
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        input::placeholder {
+            color: #64757a;
+        }
+
+        input:focus {
+            border-color: #00d9ff;
+            background: rgba(0, 217, 255, 0.035);
+            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.09);
+        }
+
+        input.input-invalid {
+            border-color: #ff5570;
+            box-shadow: 0 0 0 3px rgba(255, 85, 112, 0.08);
+        }
+
+        /* =========================================================
+           CUSTOM GENDER DROPDOWN
+        ========================================================= */
+
+        .custom-select {
+            position: relative;
+        }
+
+        .select-button {
+            width: 100%;
+            height: 50px;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            background: rgba(0, 0, 0, 0.28);
+            color: #ffffff;
+            cursor: pointer;
+            text-align: left;
+            transition:
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .select-button:hover {
+            border-color: rgba(0, 217, 255, 0.45);
+            background: rgba(0, 217, 255, 0.035);
+        }
+
+        .select-button.open {
+            border-color: #00d9ff;
+            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.09);
+            background: rgba(0, 217, 255, 0.035);
+        }
+
+        .select-button.placeholder {
+            color: #64757a;
+        }
+
+        .select-arrow {
+            width: 9px;
+            height: 9px;
+            border-right: 2px solid #00d9ff;
+            border-bottom: 2px solid #00d9ff;
+            transform: rotate(45deg) translateY(-2px);
+            transition: transform 0.25s ease;
+            margin-right: 3px;
+        }
+
+        .select-button.open .select-arrow {
+            transform: rotate(225deg) translateY(-2px);
+        }
+
+        .select-options {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            width: 100%;
+            padding: 7px;
+            border: 1px solid rgba(0, 217, 255, 0.25);
+            border-radius: 12px;
+            background: #0a1118;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition:
+                opacity 0.2s ease,
+                transform 0.2s ease,
+                visibility 0.2s ease;
+            z-index: 50;
+        }
+
+        .select-options.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .select-option {
+            width: 100%;
+            padding: 11px 13px;
+            border: none;
+            border-radius: 8px;
+            background: transparent;
+            color: #dbe8eb;
+            cursor: pointer;
+            text-align: left;
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                padding-left 0.2s ease;
+        }
+
+        .select-option:hover,
+        .select-option:focus {
+            outline: none;
+            padding-left: 17px;
+            color: #00d9ff;
+            background: rgba(0, 217, 255, 0.09);
+        }
+
+        .select-option.selected {
+            color: #00d9ff;
+            background: rgba(0, 217, 255, 0.07);
+        }
+
+        .hidden-select {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* =========================================================
+           PASSWORD FIELD
+        ========================================================= */
+
+        .password-wrap {
+            position: relative;
+        }
+
+        .password-wrap input {
+            padding-right: 72px;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 9px;
+            top: 8px;
+            height: 34px;
+            padding: 0 9px;
+            border: 1px solid rgba(0, 217, 255, 0.18);
+            border-radius: 7px;
+            background: rgba(0, 217, 255, 0.06);
+            color: #00d9ff;
+            cursor: pointer;
+            font-size: 0.76rem;
+            transition: all 0.2s ease;
+        }
+
+        .show-password:hover {
+            background: rgba(0, 217, 255, 0.13);
+            border-color: rgba(0, 217, 255, 0.4);
+        }
+
+        .password-strength {
+            height: 4px;
+            margin-top: 8px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .password-strength::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            border-radius: inherit;
+            transition: width 0.3s ease;
+        }
+
+        .password-strength.weak::after {
+            width: 25%;
+            background: #ff5570;
+        }
+
+        .password-strength.medium::after {
+            width: 50%;
+            background: #ffb84d;
+        }
+
+        .password-strength.good::after {
+            width: 75%;
+            background: #65d68a;
+        }
+
+        .password-strength.strong::after {
+            width: 100%;
+            background: #00d9ff;
+        }
+
+        .error-message {
+            display: block;
+            min-height: 18px;
+            margin-top: 5px;
+            color: #ff6c83;
+            font-size: 0.76rem;
+        }
+
+        /* =========================================================
+           TERMS
+        ========================================================= */
+
+        .terms {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 3px;
+        }
+
+        .terms input {
+            width: 17px;
+            height: 17px;
+            margin-top: 3px;
+            accent-color: #00d9ff;
+            cursor: pointer;
+        }
+
+        .terms label {
+            margin: 0;
+            color: #8fa2a7;
+            font-size: 0.82rem;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .terms a {
+            color: #00d9ff;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+
+        #agreeError {
+            margin-left: 27px;
+        }
+
+        /* =========================================================
+           CREATE ACCOUNT BUTTON
+        ========================================================= */
+
+        .create-button {
+            width: 100%;
+            height: 52px;
+            margin-top: 7px;
+            border: none;
+            border-radius: 10px;
+            background: #00d9ff;
+            color: #031017;
+            font-weight: bold;
+            cursor: pointer;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .create-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 217, 255, 0.2);
+            background: #24ddff;
+        }
+
+        .create-button:active {
+            transform: translateY(0);
+        }
+
+        .login-text {
+            text-align: center;
+            margin-top: 20px;
+            color: #83969b;
+            font-size: 0.87rem;
+        }
+
+        .login-text a {
+            color: #00d9ff;
+            font-weight: bold;
+        }
+
+        .login-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================================================
+           SUCCESS MODAL
+        ========================================================= */
+
+        .success-overlay {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.72);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            opacity: 0;
+            visibility: hidden;
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+            z-index: 3000;
+        }
+
+        .success-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .success-modal {
+            width: 100%;
+            max-width: 570px;
+            padding: 38px;
+            border: 1px solid rgba(0, 217, 255, 0.28);
+            border-radius: 20px;
+            background: #081017;
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.7),
+                0 0 40px rgba(0, 217, 255, 0.08);
+            transform: translateY(20px) scale(0.97);
+            transition: transform 0.3s ease;
+        }
+
+        .success-overlay.show .success-modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .success-icon {
+            width: 62px;
+            height: 62px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #00d9ff;
+            background: rgba(0, 217, 255, 0.08);
+            color: #00d9ff;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .success-modal h2 {
+            font-size: 1.9rem;
+            margin-bottom: 8px;
+        }
+
+        .success-modal > p {
+            color: #93a5aa;
+            margin-bottom: 25px;
+        }
+
+        .account-summary {
+            display: grid;
+            gap: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .summary-row:nth-child(even) {
+            background: rgba(0, 217, 255, 0.025);
+        }
+
+        .summary-label {
+            color: #72858a;
+            font-size: 0.82rem;
+        }
+
+        .summary-value {
+            color: #e7f1f3;
+            font-size: 0.84rem;
+            text-align: right;
+            word-break: break-word;
+        }
+
+        .success-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .modal-button {
+            height: 46px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .edit-button {
+            border: 1px solid rgba(0, 217, 255, 0.25);
+            background: rgba(0, 217, 255, 0.05);
+            color: #00d9ff;
+        }
+
+        .edit-button:hover {
+            background: rgba(0, 217, 255, 0.11);
+            border-color: rgba(0, 217, 255, 0.45);
+        }
+
+        .continue-button {
+            border: none;
+            background: #00d9ff;
+            color: #031017;
+        }
+
+        .continue-button:hover {
+            background: #24ddff;
+            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.18);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 25px 5%;
+            text-align: center;
+            color: #65767b;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        footer span {
+            color: #00d9ff;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+            .register-container {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+            }
+
+            .register-intro {
+                padding: 32px;
+            }
+
+            .register-intro h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 760px) {
+            header {
+                height: 70px;
+            }
+
+            .logo-area span {
+                font-size: 1.05rem;
+            }
+
+            .logo-area img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                right: 5%;
+                width: 220px;
+                padding: 15px;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+                border: 1px solid rgba(0, 217, 255, 0.18);
+                border-radius: 12px;
+                background: #081017;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                padding: 10px 12px;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            main {
+                padding-top: 105px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .register-card {
+                padding: 25px 20px;
+            }
+
+            .register-intro {
+                padding: 28px 22px;
+            }
+
+            .register-intro h1 {
+                font-size: 1.8rem;
+            }
+
+            .success-modal {
+                padding: 28px 20px;
+            }
+
+            .success-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-row {
+                flex-direction: column;
+                gap: 3px;
+            }
+
+            .summary-value {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header>
+        <a href="index.html" class="logo-area" aria-label="ZA Electronics Home">
+            <img src="canva/logo.png" alt="ZA Electronics logo">
+            <span><strong>ZA</strong> Electronics</span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="blog.html">Blog</a>
+            <a href="login.html">Login</a>
+            <a href="register.html" class="active" aria-current="page">Register</a>
+        </nav>
+    </header>
+
+
+    <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+
+    <main>
+
+        <div class="register-container">
+
+            <!-- INTRODUCTION -->
+
+            <section class="register-intro">
+
+                <span class="intro-badge">ZA Electronics</span>
+
+                <h1>
+                    Create your
+                    <span>account.</span>
+                </h1>
+
+                <p>
+                    Join ZA Electronics and make your shopping experience
+                    easier, faster and more convenient.
+                </p>
+
+                <ul class="benefits">
+
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        <span>
+                            <strong>Easy shopping</strong><br>
+                            Keep your information ready for future purchases.
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        <span>
+                            <strong>Better experience</strong><br>
+                            Get a smoother and more personalised experience.
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="benefit-icon">✓</span>
+                        <span>
+                            <strong>Stay connected</strong><br>
+                            Keep up with products and updates from ZA Electronics.
+                        </span>
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- REGISTRATION FORM -->
+
+            <section class="register-card">
+
+                <div class="register-card-header">
+                    <h2>Create Account</h2>
+                    <p>Enter your details below to get started.</p>
+                </div>
+
+                <form
+                    id="registerForm"
+                    action="process-register.php"
+                    method="POST"
+                    novalidate>
+
+                    <div class="form-grid">
+
+                        <!-- NAME -->
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name">
+
+                            <span
+                                class="error-message"
+                                id="nameError"></span>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email">
+
+                            <span
+                                class="error-message"
+                                id="emailError"></span>
+
+                        </div>
+
+
+                        <!-- PHONE -->
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="0300-1234567"
+                                autocomplete="tel">
+
+                            <span
+                                class="error-message"
+                                id="phoneError"></span>
+
+                        </div>
+
+
+                        <!-- CUSTOM GENDER DROPDOWN -->
+
+                        <div class="form-group">
+
+                            <label id="genderLabel">
+                                Gender <span class="required">*</span>
+                            </label>
+
+                            <div class="custom-select" id="genderSelect">
+
+                                <button
+                                    type="button"
+                                    class="select-button placeholder"
+                                    id="genderButton"
+                                    aria-haspopup="listbox"
+                                    aria-expanded="false"
+                                    aria-labelledby="genderLabel">
+
+                                    <span id="genderText">
+                                        Select your gender
+                                    </span>
+
+                                    <span class="select-arrow"></span>
+
+                                </button>
+
+                                <div
+                                    class="select-options"
+                                    id="genderOptions"
+                                    role="listbox"
+                                    aria-labelledby="genderLabel">
+
+                                    <button
+                                        type="button"
+                                        class="select-option"
+                                        data-value="Male"
+                                        role="option">
+                                        Male
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="select-option"
+                                        data-value="Female"
+                                        role="option">
+                                        Female
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="select-option"
+                                        data-value="Other"
+                                        role="option">
+                                        Other
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="select-option"
+                                        data-value="Prefer not to say"
+                                        role="option">
+                                        Prefer not to say
+                                    </button>
+
+                                </div>
+
+                                <!-- Hidden native value for PHP/form submission -->
+                                <input
+                                    type="hidden"
+                                    id="gender"
+                                    name="gender"
+                                    value="">
+
+                            </div>
+
+                            <span
+                                class="error-message"
+                                id="genderError"></span>
+
+                        </div>
+
+
+                        <!-- JOB / BUSINESS -->
+
+                        <div class="form-group full">
+
+                            <label for="job">
+                                Job / Business <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="job"
+                                name="job"
+                                placeholder="e.g. Student, Business Owner, Engineer"
+                                autocomplete="organization-title">
+
+                            <span
+                                class="error-message"
+                                id="jobError"></span>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="form-group">
+
+                            <label for="password">
+                                Password <span class="required">*</span>
+                            </label>
+
+                            <div class="password-wrap">
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Minimum 8 characters"
+                                    autocomplete="new-password">
+
+                                <button
+                                    type="button"
+                                    class="show-password"
+                                    data-target="password"
+                                    aria-label="Show password">
+                                    Show
+                                </button>
+
+                            </div>
+
+                            <div
+                                class="password-strength"
+                                id="passwordStrength">
+                            </div>
+
+                            <span
+                                class="error-message"
+                                id="passwordError"></span>
+
+                        </div>
+
+
+                        <!-- CONFIRM PASSWORD -->
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirm Password <span class="required">*</span>
+                            </label>
+
+                            <div class="password-wrap">
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirm_password"
+                                    placeholder="Enter password again"
+                                    autocomplete="new-password">
+
+                                <button
+                                    type="button"
+                                    class="show-password"
+                                    data-target="confirmPassword"
+                                    aria-label="Show password">
+                                    Show
+                                </button>
+
+                            </div>
+
+                            <span
+                                class="error-message"
+                                id="confirmPasswordError"></span>
+
+                        </div>
+
+
+                        <!-- TERMS -->
+
+                        <div class="form-group full">
+
+                            <div class="terms">
+
+                                <input
+                                    type="checkbox"
+                                    id="agree"
+                                    name="agree">
+
+                                <label for="agree">
+                                    I agree to the
+                                    <a href="#" onclick="return false;">
+                                        terms and conditions
+                                    </a>.
+                                </label>
+
+                            </div>
+
+                            <span
+                                class="error-message"
+                                id="agreeError"></span>
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+
+                        <div class="form-group full">
+
+                            <button
+                                type="submit"
+                                class="create-button">
+                                Create My Account
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <p class="login-text">
+                    Already have an account?
+                    <a href="login.html">Log in here</a>
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================================
+         SUCCESS MODAL
+    ========================================================== -->
+
+    <div
+        class="success-overlay"
+        id="successOverlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="successTitle">
+
+        <div class="success-modal">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h2 id="successTitle">
+                You're all set!
+            </h2>
+
+            <p>
+                Your details look good. Here's a quick look at the
+                information you entered before you continue.
+            </p>
+
+            <div class="account-summary">
+
+                <div class="summary-row">
+                    <span class="summary-label">Name</span>
+                    <span class="summary-value" id="summaryName"></span>
+                </div>
+
+                <div class="summary-row">
+                    <span class="summary-label">Email</span>
+                    <span class="summary-value" id="summaryEmail"></span>
+                </div>
+
+                <div class="summary-row">
+                    <span class="summary-label">Phone</span>
+                    <span class="summary-value" id="summaryPhone"></span>
+                </div>
+
+                <div class="summary-row">
+                    <span class="summary-label">Gender</span>
+                    <span class="summary-value" id="summaryGender"></span>
+                </div>
+
+                <div class="summary-row">
+                    <span class="summary-label">Job / Business</span>
+                    <span class="summary-value" id="summaryJob"></span>
+                </div>
+
+            </div>
+
+            <div class="success-actions">
+
+                <button
+                    type="button"
+                    class="modal-button edit-button"
+                    id="editDetails">
+                    Edit Details
+                </button>
+
+                <button
+                    type="button"
+                    class="modal-button continue-button"
+                    id="continueButton">
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+        © 2026 <span>ZA Electronics</span>. All rights reserved.
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+         document.addEventListener("DOMContentLoaded", function () {
+
+            /* =====================================================
+               MOBILE NAVIGATION
+            ===================================================== */
+
+            const menuToggle = document.getElementById("menuToggle");
+            const mainNav = document.getElementById("mainNav");
+
+            menuToggle.addEventListener("click", function () {
+
+                const isOpen =
+                    mainNav.classList.toggle("show");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+                menuToggle.setAttribute(
+                    "aria-label",
+                    isOpen
+                        ? "Close navigation menu"
+                        : "Open navigation menu"
+                );
+
+            });
+
+
+            /* =====================================================
+               CUSTOM GENDER DROPDOWN
+            ===================================================== */
+
+            const genderButton =
+                document.getElementById("genderButton");
+
+            const genderOptions =
+                document.getElementById("genderOptions");
+
+            const genderText =
+                document.getElementById("genderText");
+
+            const genderInput =
+                document.getElementById("gender");
+
+            const optionButtons =
+                document.querySelectorAll(".select-option");
+
+
+            function closeGenderDropdown() {
+
+                genderButton.classList.remove("open");
+
+                genderOptions.classList.remove("open");
+
+                genderButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+
+            genderButton.addEventListener("click", function (event) {
+
+                event.stopPropagation();
+
+                const isOpen =
+                    genderOptions.classList.toggle("open");
+
+                genderButton.classList.toggle("open", isOpen);
+
+                genderButton.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+            });
+
+
+            optionButtons.forEach(function (option) {
+
+                option.addEventListener("click", function () {
+
+                    const value =
+                        option.getAttribute("data-value");
+
+                    genderInput.value = value;
+
+                    genderText.textContent = value;
+
+                    genderButton.classList.remove("placeholder");
+
+                    optionButtons.forEach(function (item) {
+                        item.classList.remove("selected");
+                        item.setAttribute("aria-selected", "false");
+                    });
+
+                    option.classList.add("selected");
+
+                    option.setAttribute("aria-selected", "true");
+
+                    genderInput.classList.remove("input-invalid");
+
+                    document.getElementById(
+                        "genderError"
+                    ).textContent = "";
+
+                    closeGenderDropdown();
+
+                });
+
+            });
+
+
+            document.addEventListener("click", function (event) {
+
+                if (
+                    !document
+                        .getElementById("genderSelect")
+                        .contains(event.target)
+                ) {
+                    closeGenderDropdown();
+                }
+
+            });
+
+
+            /* =====================================================
+               SHOW / HIDE PASSWORD
+            ===================================================== */
+
+            const passwordButtons =
+                document.querySelectorAll(".show-password");
+
+
+            passwordButtons.forEach(function (button) {
+
+                button.addEventListener("click", function () {
+
+                    const targetId =
+                        button.getAttribute("data-target");
+
+                    const target =
+                        document.getElementById(targetId);
+
+                    if (!target) {
+                        return;
+                    }
+
+                    if (target.type === "password") {
+
+                        target.type = "text";
+
+                        button.textContent = "Hide";
+
+                        button.setAttribute(
+                            "aria-label",
+                            "Hide password"
+                        );
+
+                    } else {
+
+                        target.type = "password";
+
+                        button.textContent = "Show";
+
+                        button.setAttribute(
+                            "aria-label",
+                            "Show password"
+                        );
+
+                    }
+
+                });
+
+            });
+
+
+            /* =====================================================
+               PASSWORD STRENGTH
+            ===================================================== */
+
+            const password =
+                document.getElementById("password");
+
+            const passwordStrength =
+                document.getElementById("passwordStrength");
+
+
+            password.addEventListener("input", function () {
+
+                const value = password.value;
+
+                passwordStrength.className =
+                    "password-strength";
+
+                if (value.length === 0) {
+                    return;
+                }
+
+                let score = 0;
+
+                if (value.length >= 8) {
+                    score++;
+                }
+
+                if (
+                    /[A-Z]/.test(value) &&
+                    /[a-z]/.test(value)
+                ) {
+                    score++;
+                }
+
+                if (/[0-9]/.test(value)) {
+                    score++;
+                }
+
+                if (/[^A-Za-z0-9]/.test(value)) {
+                    score++;
+                }
+
+                if (score === 1) {
+                    passwordStrength.classList.add("weak");
+                }
+
+                else if (score === 2) {
+                    passwordStrength.classList.add("medium");
+                }
+
+                else if (score === 3) {
+                    passwordStrength.classList.add("good");
+                }
+
+                else if (score === 4) {
+                    passwordStrength.classList.add("strong");
+                }
+
+            });
+
+
+            /* =====================================================
+               FORM VALIDATION
+            ===================================================== */
+
+            const registerForm =
+                document.getElementById("registerForm");
+
+
+            function setError(inputId, errorId, message) {
+
+                const input =
+                    document.getElementById(inputId);
+
+                const error =
+                    document.getElementById(errorId);
+
+                if (!input || !error) {
+                    return;
+                }
+
+                if (message !== "") {
+
+                    input.classList.add("input-invalid");
+
+                    error.textContent = message;
+
+                } else {
+
+                    input.classList.remove("input-invalid");
+
+                    error.textContent = "";
+
+                }
+
+            }
+
+
+            function validateForm() {
+
+                let valid = true;
+
+                const name =
+                    document.getElementById("name").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const phone =
+                    document.getElementById("phone").value.trim();
+
+                const gender =
+                    document.getElementById("gender").value;
+
+                const job =
+                    document.getElementById("job").value.trim();
+
+                const pass =
+                    document.getElementById("password").value;
+
+                const confirmPass =
+                    document.getElementById("confirmPassword").value;
+
+                const agree =
+                    document.getElementById("agree").checked;
+
+
+                /* NAME */
+
+                if (name.length < 2) {
+
+                    setError(
+                        "name",
+                        "nameError",
+                        "Please enter your full name."
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    setError(
+                        "name",
+                        "nameError",
+                        ""
+                    );
+
+                }
+
+
+                /* EMAIL */
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(email)) {
+
+                    setError(
+                        "email",
+                        "emailError",
+                        "Please enter a valid email address."
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    setError(
+                        "email",
+                        "emailError",
+                        ""
+                    );
+
+                }
+
+
+                /* PHONE */
+
+                const phonePattern =
+                    /^(?:\+92|0)3\d{2}[- ]?\d{7}$/;
+
+                if (!phonePattern.test(phone)) {
+
+                    setError(
+                        "phone",
+                        "phoneError",
+                        "Use a valid Pakistani mobile number, e.g. 0300-1234567."
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    setError(
+                        "phone",
+                        "phoneError",
+                        ""
+                    );
+
+                }
+
+
+                /* GENDER */
+
+                if (gender === "") {
+
+                    setError(
+                        "gender",
+                        "genderError",
+                        "Please select your gender."
+                    );
+
+                    genderButton.classList.add("input-invalid");
+
+                    valid = false;
+
+                } else {
+
+                    setError(
+                        "gender",
+                        "genderError",
+                        ""
+                    );
+
+                    genderButton.classList.remove(
+                        "input-invalid"
+                    );
+
+                }
+
+
+                /* JOB */
+
+                if (job.length < 2) {
+
+                    setError(
+                        "job",
+                        "jobError",
+                        "Please enter your job or business."
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    setError(
+                        "job",
+                        "jobError",
+                        ""
+                    );
+
+                }
+
+
+                /* PASSWORD */
+
+                if (pass.length < 8) {
+
+                    setError(
+                        "password",
+                        "passwordError",
+                        "Password must contain at least 8 characters."
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    setError(
+                        "password",
+                        "passwordError",
+                        ""
+                    );
+
+                }
+
+
+                /* CONFIRM PASSWORD */
+
+                if (
+                    confirmPass === "" ||
+                    confirmPass !== pass
+                ) {
+
+                    setError(
+                        "confirmPassword",
+                        "confirmPasswordError",
+                        "Passwords do not match."
+                    );
+
+                    valid = false;
+
+                } else {
+
+                    setError(
+                        "confirmPassword",
+                        "confirmPasswordError",
+                        ""
+                    );
+
+                }
+
+
+                /* TERMS */
+
+                const agreeError =
+                    document.getElementById("agreeError");
+
+                if (!agree) {
+
+                    agreeError.textContent =
+                        "Please agree to the terms and conditions.";
+
+                    valid = false;
+
+                } else {
+
+                    agreeError.textContent = "";
+
+                }
+
+
+                return valid;
+
+            }
+
+
+            /* =====================================================
+               SUCCESS MODAL
+            ===================================================== */
+
+            const successOverlay =
+                document.getElementById("successOverlay");
+
+            const editDetails =
+                document.getElementById("editDetails");
+
+            const continueButton =
+                document.getElementById("continueButton");
+
+
+            function openSuccessModal() {
+
+                document.getElementById(
+                    "summaryName"
+                ).textContent =
+                    document.getElementById("name").value.trim();
+
+                document.getElementById(
+                    "summaryEmail"
+                ).textContent =
+                    document.getElementById("email").value.trim();
+
+                document.getElementById(
+                    "summaryPhone"
+                ).textContent =
+                    document.getElementById("phone").value.trim();
+
+                document.getElementById(
+                    "summaryGender"
+                ).textContent =
+                    document.getElementById("gender").value;
+
+                document.getElementById(
+                    "summaryJob"
+                ).textContent =
+                    document.getElementById("job").value.trim();
+
+
+                successOverlay.classList.add("show");
+
+                document.body.style.overflow = "hidden";
+
+            }
+
+
+            function closeSuccessModal() {
+
+                successOverlay.classList.remove("show");
+
+                document.body.style.overflow = "";
+
+            }
+
+
+            /* =====================================================
+               SUBMIT
+            ===================================================== */
+
+  /* =====================================================
+   SUBMIT - SHOW PREVIEW FIRST
+===================================================== */
+
+let confirmedRegistration = false;
+
+registerForm.addEventListener(
+    "submit",
+    function (event) {
+
+        // If user has clicked Continue,
+        // allow the form to go to PHP.
+        if (confirmedRegistration) {
+            return;
+        }
+
+        // Stop the normal form submission.
+        event.preventDefault();
+
+        // Validate the form first.
+        if (!validateForm()) {
+
+            const firstInvalid =
+                registerForm.querySelector(
+                    ".input-invalid"
+                );
+
+            if (firstInvalid) {
+                firstInvalid.focus();
+            }
+
+            return;
+        }
+
+        // Show the preview modal.
+        openSuccessModal();
+
+    }
+);
+
+
+            /* =====================================================
+               EDIT DETAILS
+            ===================================================== */
+
+            editDetails.addEventListener(
+                "click",
+                function () {
+
+                    closeSuccessModal();
+
+                    const nameInput =
+                        document.getElementById("name");
+
+                    nameInput.focus();
+
+                }
+            );
+
+
+           /* =====================================================
+   CONTINUE - SUBMIT TO PHP
+===================================================== */
+
+continueButton.addEventListener(
+    "click",
+    function () {
+
+        confirmedRegistration = true;
+
+        closeSuccessModal();
+
+        registerForm.submit();
+
+    }
+);
+
+            /* =====================================================
+               CLOSE MODAL WITH ESCAPE
+            ===================================================== */
+
+            document.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Escape" &&
+                        successOverlay.classList.contains("show")
+                    ) {
+                        closeSuccessModal();
+                    }
+
+                }
+            );
+
+        });
+
+
+       
+    </script>
+
+</body>
+</html>
+```
